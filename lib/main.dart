@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_app/ListaView.dart';
+import 'package:prueba_app/NewForm.dart';
 import 'package:prueba_app/Register.dart';
 import 'package:prueba_app/calculadora.dart';
 import 'package:prueba_app/cards.dart';
@@ -14,11 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Menu(),
+      home: const Menu(),
       theme: ThemeData(
         primaryColor: Colors.blueGrey,
         textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.black, fontSize: 18),
+          bodyText1: const TextStyle(color: Colors.black, fontSize: 18),
           bodyText2: TextStyle(color: Colors.grey[600]),
         ),
         colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
@@ -40,73 +41,94 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Widgets"),
+        title: const Text("Widgets"),
       ),
       body: Center(
           child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(8.0), // Ajusta el valor según sea necesario
+            padding: const EdgeInsets.all(
+                8.0), // Ajusta el valor según sea necesario
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => TextBox())));
+                    MaterialPageRoute(builder: ((context) => const TextBox())));
               },
-              child: Text("TextBox"),
+              child: const Text("TextBox"),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0), // Ajusta el valor según sea necesario
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => Calculadora())));
-              },
-              child: Text("Calculadora"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0), // Ajusta el valor según sea necesario
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => MyForm())));
-              },
-              child: Text("Formularios"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0), // Ajusta el valor según sea necesario
+            padding: const EdgeInsets.all(
+                8.0), // Ajusta el valor según sea necesario
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: ((context) => UsandoListView())));
+                        builder: ((context) => const Calculadora())));
               },
-              child: Text("ListViews"),
+              child: const Text("Calculadora"),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0), // Ajusta el valor según sea necesario
+            padding: const EdgeInsets.all(
+                8.0), // Ajusta el valor según sea necesario
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => CardExample())));
+                    MaterialPageRoute(builder: ((context) => const MyForm())));
               },
-              child: Text("Tarjetas|Card"),
+              child: const Text("Formularios"),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0), // Ajusta el valor según sea necesario
+            padding: const EdgeInsets.all(
+                8.0), // Ajusta el valor según sea necesario
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => Registros())));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const UsandoListView())));
               },
-              child: Text("RegistroDeParticipantes"),
+              child: const Text("ListViews"),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(
+                8.0), // Ajusta el valor según sea necesario
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const CardExample())));
+              },
+              child: const Text("Tarjetas|Card"),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(
+                8.0), // Ajusta el valor según sea necesario
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const Registros())));
+              },
+              child: const Text("RegistroDeParticipantes"),
+            ),
+          ),
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const NewForm()));
+                },
+                child: const Text("Formulario de lista a tarjeta"),
+              )),
           // Agrega más ElevatedButton con Padding según sea necesario
         ],
       )),
